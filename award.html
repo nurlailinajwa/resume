@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head><title>Welcome to Nur Laili Najwa Personal Webpage</title></head>
+<body><body background="images/bg30.jpg">
+<audio controls autoplay>
+<source src="sound/fade.mp3" type="audio/mpeg">
+</audio>
+
+<p align="center"><font face="tahoma"><br>
+
+<a href="index.html"><img src="images/bhome.png"></a>  <a href="objective.html"><img src="images/bobjectives.png"></a>  <a href="summary.html"><img src="images/bsummary.png"></a>  <a href="education.html"><img src="images/beducation.png"></a>  <a href="skills.html"><img src="images/bskills.png"></a>  <a href="experience.html"><img src="images/bexperiences.png"></a>  <a href="curriculars.html"><img src="images/bcurricular.png"></a>  <a href="award.html"><img src="images/bachievements.png"></a>  <a href="references.html"><img src="images/breferences.png"></a> </font></p>
+
+<font face="Stencil" color="black"><marquee behavior="alternate"><h1><p align="center">(:Welcome to Nur Laili Najwa Personal Website:)</p></h1></font></marquee>
+
+<font face="Times New Roman" color="Teal" size="4"><h1><p align="center">My Achievements</p></h1></font>
+
+<p align="center"><img src="images/p1.png" width="150" height="250" alt="Assalamualaikum, Hello My Name is Nur Laili Najwa" ></p>
+<p align="center"><font face="Britannic" color="Chocolate" size="4">
+
+<br><br>1st place in "Student Entrepreneurial Innovation Show" of UiTM Jengka, Pahang. (2014)
+<br><br>Pelajar Terbaik KO Pembinaan Diri SISWA (Pengucapan Awam) UiTM Segamat, Johor. (2010)
+
+
+
+</font>
+</p>
+</body>
+</html>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        function snow() {
+            //1, define a snowflake template
+            var flake = $("<div>").css({
+                "position": "absolute",
+                "color": "#fff"
+            }).html("❄️");
+ 
+            //Get the width of the page, use this number to calculate, the value of left when the snowflake starts
+            var documentWidth = $(document).width();
+ 
+            //Get the height of the page, which is equivalent to the position of the Y axis when the snowflakes fall
+            var documentHieght = $(document).height();
+ 
+            //Define the number of milliseconds to generate a snowflake
+            var millisec = 100;
+            //2, set the first timer, a periodic timer, and generate a snowflake every time (millisec);
+            setInterval(function() {
+                //Randomly generate the value of left at the beginning of the snowflake falling, which is equivalent to the position of the X axis at the beginning
+                var startLeft = Math.random() * documentWidth;
+ 
+                //Randomly generate the value of left at the end of snowflake falling, which is equivalent to the position of the X axis at the end
+                var endLeft = Math.random() * documentWidth;
+ 
+                // Randomly generate snowflake size
+                var flakeSize = 5 + 20 * Math.random();
+ 
+                //Randomly generate the falling duration of snowflakes
+                var durationTime = 4000 + 7000 * Math.random();
+ 
+                //Randomly generate the transparency at the beginning of falling snowflakes
+                var startOpacity = 0.7 + 0.3 * Math.random();
+ 
+                //Randomly generate the transparency at the end of falling snowflakes
+                var endOpacity = 0.2 + 0.2 * Math.random();
+ 
+                //3. Clone a snowflake template, define the initial style of the snowflake, and stitch it into the page
+                flake.clone().appendTo($("body")).css({
+                    "left": startLeft,
+                    "opacity": startOpacity,
+                    "font-size": flakeSize,
+                    "top": "-25px",
+                }).animate({ //Execute animation
+                    "left": endLeft,
+                    "opacity": endOpacity,
+                    "top": documentHieght
+                }, durationTime, function() {
+                    //4. When the snowflake falls, delete the snowflake.
+                    $(this).remove(); 
+                });
+            }, millisec);
+        };
+        snow();
+    </script>
